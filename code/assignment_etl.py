@@ -75,4 +75,8 @@ def entity_extraction_step(sentiment: str|pd.DataFrame) -> pd.DataFrame:
 
 if __name__ == '__main__':
     import streamlit as st 
-    st.write("What do you want to debug?")
+    st.write("What to debug?")
+    reviews_step(PLACE_IDS_SOURCE_FILE)
+    sentiment_step(CACHE_REVIEWS_FILE)
+    entities_df = entity_extraction_step(CACHE_SENTIMENT_FILE)
+    st.write(entities_df)
